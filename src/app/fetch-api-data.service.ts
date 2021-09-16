@@ -15,7 +15,7 @@ const username = localStorage.getItem('user');
   providedIn: 'root'
 })
 
-export class FetchDataApiService {
+export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
   constructor(private http: HttpClient) { }
 
@@ -208,7 +208,7 @@ export class FetchDataApiService {
         `Error body is: ${error.error}`
       );
     } return throwError(
-      'Something bad happened, please try again later'
+      'Something unexpected happened, please try again later'
     );
   }
 }
