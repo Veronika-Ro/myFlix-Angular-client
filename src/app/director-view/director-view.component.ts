@@ -9,6 +9,12 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class DirectorViewComponent implements OnInit {
 
+  /**
+   * Director view with name, bio, birth and death data.
+   * @param data
+   * @returns director's name, bio, birth, death 
+   */
+
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {

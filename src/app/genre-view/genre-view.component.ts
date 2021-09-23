@@ -8,6 +8,12 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class GenreViewComponent implements OnInit {
 
+  /**
+   * Genre view with name and descriptiion.
+   * @param data
+   * @returns genre's name, description
+   */
+
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {

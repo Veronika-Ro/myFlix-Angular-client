@@ -19,11 +19,11 @@ Using Angular, build the client-side for an application called myFlix based on i
 
 ## Key Features
 
--Your app should display a welcome view where users will be able to either log in or register an account.
+- The app should display a welcome view where users will be able to either log in or register an account.
 - Once authenticated, the user should now view all movies.
 - Upon clicking on a particular movie, users will be taken to a single movie view, where additional movie details will be displayed. The single movie view will contain the following additional features:
-1. A button that when clicked takes a user to the director view, where details about the director of that particular movie will be displayed.
-2. A button that when clicked takes a user to the genre view, where details about that particular genre of the movie will be displayed. 
+- - A button that when clicked takes a user to the director view, where details about the director of that particular movie will be displayed.
+- - A button that when clicked takes a user to the genre view, where details about that particular genre of the movie will be displayed. 
 
 ## Technical Requirements
 

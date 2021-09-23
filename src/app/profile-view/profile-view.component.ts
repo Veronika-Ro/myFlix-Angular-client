@@ -31,13 +31,20 @@ export class ProfileViewComponent implements OnInit {
     public dialog: MatDialog,
     public router: Router,
   ) { }
+
   /**
    * Gets user info on initialization.
    */
+
   ngOnInit(): void {
     this.getUserData();
   }
 
+  /**
+    * @method getUserData()
+    * Calls getUser() from the API which returns the user. 
+    * Then calls getFvoriteMovies(), which has logic to return the user's favorite movies.
+    */
 
   getUserData(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
@@ -51,6 +58,7 @@ export class ProfileViewComponent implements OnInit {
    * @method getFavoriteMovies()
    * Calls getAllMovies() which returns all movies, then calling filterFavorites(), which returns the user's favorite movies.
    */
+
   getFavoriteMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((res: any) => {
       this.movies = res;
@@ -58,12 +66,21 @@ export class ProfileViewComponent implements OnInit {
     });
   }
 
+  /**
+  * @method filterFavorites()
+  * Filters movie list against the user's favorite movies. 
+  * @returns Array of user's favorite movies.
+  */
 
   filterFavorites(): void {
     this.favorites = this.movies.filter((movie: any) => this.user.FavoriteMovies.includes(movie._id));
     return this.favorites;
   }
 
+  /**
+   * @method openUpdateViewDialog()
+   * Opens the Update view component when the "update" button is clicked on the user profile
+   */
 
   openUpdateViewDialog(): void {
     this.dialog.open(UpdateViewComponent, {
@@ -71,6 +88,10 @@ export class ProfileViewComponent implements OnInit {
     });
   }
 
+  /**
+   * @method deleteProfile()
+   * deletes the user's data permanently
+   */
 
   deleteProfile(): void {
     if (confirm('Are you sure? This cannot be undone.')) {
@@ -83,11 +104,13 @@ export class ProfileViewComponent implements OnInit {
       });
     }
   }
+
   /**
    * Method that removes movie from user's list of favorite movies.
    * @param _id movie._id
    * @param title movie._title
    */
+
   removeFromFavorites(_id: string, title: string): void {
     this.fetchApiData.RemoveFromFavoriteMovies(_id).subscribe(() => {
       this.snackBar.open(
