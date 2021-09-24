@@ -36,7 +36,7 @@ export class UpdateViewComponent implements OnInit {
     this.fetchApiData.EditUserProfile(this.userData).subscribe((response) => {
       this.dialogRef.close();
       localStorage.setItem('user', response.UserName);
-      this.snackBar.open('Profile updated', 'OK', {
+      this.snackBar.open('Profile deatails have been updated', 'OK', {
         duration: 2000,
       });
     }, (response) => {
