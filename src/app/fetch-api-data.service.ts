@@ -131,7 +131,7 @@ export class FetchApiDataService {
 
   // Add a movie to the favoritemovies-array (private service)
   PostToFavoriteMovies(_id: string): Observable<any> {
-    return this.http.post(apiUrl + `users/${username}/movies/${_id}`,
+    return this.http.post(apiUrl + `users/${username}/movies/${_id}`, _id,
       {
         headers: new HttpHeaders(
           {
@@ -147,7 +147,7 @@ export class FetchApiDataService {
 
   // Edit user profile (private service)
   EditUserProfile(userData: any): Observable<any> {
-    return this.http.put(apiUrl + `users/${username}/update`,
+    return this.http.put(apiUrl + `users/${username}`, userData,
       {
         headers: new HttpHeaders(
           {
